@@ -1,0 +1,6 @@
+[workspace]
+members = ["src-tauri", "crates/txt-novel-parser"]
+resolver = "2"
+
+[workspace.metadata.rustfmt]
+config-path = "rustfmt.toml"

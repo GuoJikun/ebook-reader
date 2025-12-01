@@ -1,0 +1,12 @@
+[package]
+name = "txt-novel-parser"
+description = "Simple TXT novel parser for Rust, with auto chapter detection and title recognition."
+license = "MIT"
+version = "0.1.0"
+edition = "2024"
+readme = "README.md"
+
+[dependencies]
+chardetng = "0.1.17"
+encoding_rs = "0.8.35"
+regex = "1.12.2"
