@@ -5,8 +5,14 @@ license = "MIT"
 version = "0.1.0"
 edition = "2024"
 readme = "README.md"
+authors = ["GuoJikun <guojikun486546@163.com>"]
+
+[lib]
+name = "txt_novel_parser"
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 chardetng = "0.1.17"
 encoding_rs = "0.8.35"
 regex = "1.12.2"
+serde = "1.0.228"

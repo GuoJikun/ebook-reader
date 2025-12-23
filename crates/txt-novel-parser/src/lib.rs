@@ -1,14 +1,15 @@
 use chardetng::EncodingDetector;
 use encoding_rs::Encoding;
 use regex::Regex;
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Chapter {
     pub title: String,
     pub content: String,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct Novel {
     pub title: Option<String>,
     pub author: Option<String>,

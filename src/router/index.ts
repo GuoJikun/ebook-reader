@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: { title: "阅读" },
   },
   {
-    path: "settings",
+    path: "/settings",
     name: "settings",
     component: () => import("../views/settings.vue"),
     meta: { title: "设置" },

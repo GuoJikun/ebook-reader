@@ -23,3 +23,7 @@ tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
+txt-novel-parser = { path = "../crates/txt-novel-parser" }
+tauri-plugin-store = "2"
+md5 = "0.8"
+tauri-plugin-dialog = "2"

@@ -1,4 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useStore } from "./store";
+import { onMounted } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const store = useStore();
+
+onMounted(() => {
+  if (store.exist) {
+    router.push("detail");
+  }
+});
+</script>
 
 <template>
   <router-view />
