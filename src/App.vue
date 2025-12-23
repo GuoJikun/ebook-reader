@@ -25,6 +25,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  background-color: transparent;
 }
 html {
   font-size: 10px;
@@ -37,7 +38,8 @@ body {
 #app {
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
+  background-color: transparent;
 }
 *,
 *::before,

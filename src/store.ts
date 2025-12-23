@@ -31,12 +31,23 @@ export const useStore = defineStore(
     const updateCurChapterIndex = (index: number) => {
       curChapterIndex.value = index;
     };
+
+    const config = ref<Record<string, string> | null>(null);
     return {
       exist,
       novel,
       updateNoveInfo,
       curChapterIndex,
       updateCurChapterIndex,
+      config,
+      updateConfig: (val: Record<string, string>) => {
+        config.value = {
+          fontSize: "16",
+          lineHeight: "1.6",
+          backgroundColor: "#ffffff",
+          ...val,
+        };
+      },
     };
   },
   {

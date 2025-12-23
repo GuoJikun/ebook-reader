@@ -25,6 +25,16 @@ const curContent = computed(() => {
   return "";
 });
 
+const config = computed({
+  get: () =>
+    store?.config ?? {
+      fontSize: 14,
+      lineHeight: 1.6,
+      backgroundColor: "#ffffff",
+    },
+  set: (value: Record<string, string>) => store.updateConfig(value),
+});
+
 onMounted(() => {
   novel.value = store.novel;
   console.log("Novel Info on Detail Page:", novel.value);
@@ -33,8 +43,8 @@ onMounted(() => {
 
 <template>
   <div class="detail">
-    <div class="detail-top"></div>
-    <div class="detail-header">
+    <div class="detail-top" data-tauri-drag-region></div>
+    <div class="detail-header" data-tauri-drag-region>
       <el-link :icon="Back" @click="goBack"></el-link>
       <span>{{ novel?.title }}</span>
       <div><Close /></div>
@@ -45,7 +55,9 @@ onMounted(() => {
           white-space: pre-wrap;
           word-break: break-word;
           width: 100%;
+          height: 100%;
           display: block;
+          overflow: auto;
         "
       >
         {{ curContent }}
@@ -60,6 +72,7 @@ onMounted(() => {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  background-color: v-bind("config.backgroundColor");
   &-header {
     height: 40px;
     padding: 4px 12px;
@@ -70,6 +83,12 @@ onMounted(() => {
 
   &-main {
     flex: auto;
+    overflow: hidden;
+    &-pre {
+      font-size: v-bind("config.fontSize") + "px";
+      line-height: v-bind("config.lineHeight");
+      padding: 16px;
+    }
   }
 }
 </style>
