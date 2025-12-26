@@ -45,6 +45,8 @@ export const useStore = defineStore(
           fontSize: "16",
           lineHeight: "1.6",
           backgroundColor: "#ffffff",
+          color: "#333333",
+          ...config.value,
           ...val,
         };
       },
@@ -52,7 +54,7 @@ export const useStore = defineStore(
   },
   {
     persist: {
-      pick: ["exist", "novel"],
+      pick: ["exist", "novel", "config"],
     },
   }
 );
